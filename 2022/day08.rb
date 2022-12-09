@@ -1,5 +1,5 @@
 filename = ARGV[0] || "input/test08.txt"
-trees = Array.new([])
+trees = []
 File.readlines(filename, chomp: true).each_with_index do |line, i|
   trees << line.chars.map(&:to_i)
 end
@@ -25,4 +25,5 @@ borders_num = (rows + cols) * 2
 tallest_num = tallest.flatten.compact.size
 most_scenic = scenics.flatten.compact.max
 puts "Part 1: #{tallest_num + borders_num}. Part 2: #{most_scenic}"
-#puts talls.map { |a| a.map { |i| i.to_s.rjust(1) }.join } # display map of tall trees
+puts tallest.map { |a| a.map { |i| i ? '🌲' : '🌱' }.join } # display map of trees
+puts scenics.map { |a| a.map { |i| i == most_scenic ? '🎄' : i > most_scenic / 4 ? '🌲' : '🪨' }.join }
