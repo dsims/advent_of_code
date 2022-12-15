@@ -86,4 +86,4 @@ grid = build_cave Array.new(deepest+3){Array.new(width+deepest, '.')}
 grid[grid.length-1] = Array.new(width+deepest, '#') # add floor
 part2 = simulate grid
 
-puts "Part 1: #{part1} grains. Part 2: #{part2} grains"
+puts "Part 1: #{part1} grains. Part 2: #{part2+1} grains"
